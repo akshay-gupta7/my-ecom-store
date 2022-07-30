@@ -1,7 +1,6 @@
-<h1>{{ id }}</h1>
-<h2>{{ name }}</h2>
+<h1>Product List</h1>
 <ul>
-    <li>{{ price }}</li>
-    <li>{{ url }}</li>
-    <li>{{description }}</li>
+    <li *ngFor="let Product of products">
+        {{ Product.price }}
+    </li>
 </ul>
