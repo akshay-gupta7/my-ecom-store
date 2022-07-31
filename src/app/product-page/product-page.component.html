@@ -1,1 +1,16 @@
-<p>product-page works!</p>
+<h1>Product Page</h1>
+<div class="card">
+    <img src='{{ Product.url }}' width=200 height = 200>
+    <h4>{{ Product.name }}</h4>
+    <h4>${{ Product.price }}</h4>
+    <select name="total" id="total">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+
