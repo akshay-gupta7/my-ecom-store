@@ -1,6 +1,15 @@
 <h1>Product List</h1>
-<ul>
-    <li *ngFor="let Product of products">
-        {{ Product.price }}
-    </li>
-</ul>
+<div class="card " *ngFor="let Product of products">
+    <img src='{{ Product.url }}' width=100 height = 100>
+    <h4>{{ Product.name }}</h4>
+    <h4>${{ Product.price }}</h4>
+    <select name="total" id="total">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
