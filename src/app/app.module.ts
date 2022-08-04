@@ -7,6 +7,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CartComponent } from './cart/cart.component';
 import { SubmitComponent } from './submit/submit.component';
+import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SubmitComponent } from './submit/submit.component';
     ProductListComponent,
     ProductPageComponent,
     CartComponent,
-    SubmitComponent
+    SubmitComponent,
+    ProductListItemComponent
   ],
   imports: [
     BrowserModule,
