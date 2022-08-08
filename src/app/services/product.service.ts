@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductClass } from '../models/product-class.model';
+import { HttpService } from './http.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   productlist: ProductClass[]= [];
+  product: ProductClass[] = [];
 
-  constructor() { }
+  constructor(private HttpService: HttpService ) { }
 
-  getProducts2(){
-    return this.productlist;
-  }
+  getProducts(): void{
+    this.HttpService.getProducts().subscribe(data =>{
+      this.productlist = data;
+  })
+}
 }
