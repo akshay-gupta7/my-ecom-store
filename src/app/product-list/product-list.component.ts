@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { HttpService } from '../services/http.service';
 import { ProductClass } from '../models/product-class.model';
@@ -17,5 +17,9 @@ export class ProductListComponent implements OnInit {
     this.HttpService.getProducts().subscribe(data =>{
       this.products = data;
     })
+  }
+  onaddtoCart(product: ProductClass): void{
+    window.alert(`${product.count} ${product.name} are added to cart`);
+    //product.count = total;
   }
 }

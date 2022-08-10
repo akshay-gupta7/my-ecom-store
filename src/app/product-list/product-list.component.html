@@ -13,5 +13,5 @@
     </select>
 </div>-->
 
-<app-product-list-item *ngFor="let Product of products" [product] = "Product" ></app-product-list-item>
+<app-product-list-item *ngFor="let Product of products" [product] = "Product" (addtocart)="onaddtoCart(Product)" ></app-product-list-item>
 

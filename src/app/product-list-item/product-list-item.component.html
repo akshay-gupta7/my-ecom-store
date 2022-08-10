@@ -2,7 +2,7 @@
     <img src='{{ product.url }}' width=100 height = 100>
     <h4>{{ product.name }}</h4>
     <h4>${{ product.price }}</h4>
-    <select name="total" id="total">
+    <select name="" id ="" [(ngModel)]="product.count">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -10,6 +10,6 @@
         <option value="4">4</option>
         <option value="5">5</option>
     </select>
-    <button>Add to Cart</button>
+    <button (click)="addtocart.emit(product)">Add to Cart </button>
 </div>
 <br>
