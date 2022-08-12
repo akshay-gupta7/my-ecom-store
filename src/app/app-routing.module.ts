@@ -7,7 +7,7 @@ import { SubmitComponent } from './submit/submit.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
-  { path: 'product-detail/:id', component: ProductPageComponent },
+  { path: 'product-detail', component: ProductPageComponent },
   { path: 'cart', component: CartComponent },
   { path: 'final-submit', component: SubmitComponent  }
 ];

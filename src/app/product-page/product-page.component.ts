@@ -3,6 +3,7 @@ import { ProductService } from '../services/product.service';
 import { HttpService } from '../services/http.service';
 import { ProductClass } from '../models/product-class.model';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-product-page',
@@ -13,8 +14,9 @@ export class ProductPageComponent implements OnInit {
   products: ProductClass[] = [];
   myproduct: ProductClass[] = [];
   id: string = '0';
+  count = 0;
   
-  constructor(private ProductService: ProductService, private HttpService: HttpService, private _Activatedroute:ActivatedRoute) { }
+  constructor(private ProductService: ProductService, private HttpService: HttpService, private _Activatedroute:ActivatedRoute, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.HttpService.getProducts().subscribe(data =>{
@@ -27,8 +29,14 @@ export class ProductPageComponent implements OnInit {
       this.products = this.products.filter(x => {return x.id == test});
       this.myproduct[0] = this.products[0];
     })
-    
-
   }
+    
+    onaddtoCart(): void{
+      this.myproduct[0].count = this.count;
+      this.cartService.addtocart(this.myproduct[0]);
+      window.alert(`Added to Cart`);
+    }
+
+  
 
 }
