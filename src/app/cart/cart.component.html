@@ -1,1 +1,11 @@
-<p>cart works!</p>
+<h1 *ngIf="cartitems.length == 0">
+    Cart has no items as of now!
+    </h1>
+
+<app-cart-product *ngFor="let Product of cartitems" [product]="Product"></app-cart-product>
+
+<p>Amount to be paid: $ {{ amount }} </p>
+
+<button (click) = "clearCart()">Click to Clear all items from the cart</button>
+
+
