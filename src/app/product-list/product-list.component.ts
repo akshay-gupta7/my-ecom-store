@@ -20,8 +20,13 @@ export class ProductListComponent implements OnInit {
     })
   }
   onaddtoCart(product: ProductClass): void{
-    this.cartService.addtocart(product);
-    window.alert(`${product.count} ${product.name} are added to cart`);
+    if(product.count>0 && product.count<=5){
+      this.cartService.addtocart(product);
+      window.alert(`${product.count} ${product.name} are added to cart`);
     //product.count = total;
+    }
+    else{
+      window.alert("Only greater than 0 items can be added to the Cart")
+    }
   }
 }

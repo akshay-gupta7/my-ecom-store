@@ -32,9 +32,15 @@ export class ProductPageComponent implements OnInit {
   }
     
     onaddtoCart(): void{
-      this.myproduct[0].count = this.count;
-      this.cartService.addtocart(this.myproduct[0]);
-      window.alert(`Added to Cart`);
+      if(this.count>0 && this.count <=5){
+        this.myproduct[0].count = this.count;
+        this.cartService.addtocart(this.myproduct[0]);
+        window.alert(`Added to Cart`);
+      }
+      else
+      {
+        window.alert("Only greater than 0 items can be added to the cart");
+      }
     }
 
   
