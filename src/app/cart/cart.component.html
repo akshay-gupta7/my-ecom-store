@@ -2,7 +2,7 @@
     Cart has no items as of now!
     </h1>
 
-<app-cart-product *ngFor="let Product of cartitems" [product]="Product"></app-cart-product>
+<app-cart-product *ngFor="let Product of cartitems" [product]="Product" (removefromcart)="onremovefromcart(Product)"></app-cart-product>
 
 <p>Amount to be paid: $ {{ amount }} </p>
 

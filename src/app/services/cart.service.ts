@@ -41,6 +41,11 @@ export class CartService {
     return this.cartitems;
   }
 
+  removefromcart(product: ProductClass): ProductClass[]{
+    this.cartitems = this.cartitems.filter(x => x.id != product.id);
+    return this.cartitems;
+  }
+
   emptycart(): ProductClass[]{
     this.cartitems = [];
     alert('Cart is now cleared');

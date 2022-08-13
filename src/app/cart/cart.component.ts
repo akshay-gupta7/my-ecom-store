@@ -27,4 +27,9 @@ export class CartComponent implements OnInit {
     this.amount = this.cartService.gettotalamount();
   }
 
+  onremovefromcart(product: ProductClass): void{
+    this.cartService.removefromcart(product);
+    window.alert("Removed from cart");
+  }
+
 }
