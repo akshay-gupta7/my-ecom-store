@@ -14,7 +14,7 @@
     <br><label for="address">Address: </label><br>
     <input  required minlength="10" type="text" name="address" id="address" placeholder="Enter Street Address" [ngModel]="address"  (ngModelChange)="address = $event">
     <br><label for="credit_card">Credit Card: </label><br>
-    <input numbers-only required minlength="16" maxlength="16" type="text" name="credit_card" id="credit_card" placeholder="Enter 16 digit Credit Card number" [ngModel]="cardnum"  (ngModelChange)="cardnum= $event"> 
+    <input numbers-only required minlength="16" ngModel maxlength="16" type="text" name="credit_card" id="credit_card" pattern="[0-9]*" placeholder="Enter 16 digit Credit Card number" [ngModel]="cardnum"  (ngModelChange)="cardnum= $event"> 
     <br>
     <a routerLink='/final-submit' [queryParams]="{name: name, amount:amount}">
     <input type="submit" [disabled]="form.invalid" value="Submit">
